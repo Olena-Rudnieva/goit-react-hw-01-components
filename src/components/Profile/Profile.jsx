@@ -1,6 +1,6 @@
 import user from '../../../src/user.json';
 
-export const profile = (
+export const Profile = (
   <div className="profile">
     <div className="description">
       <img src={user.avatar} alt={user.username} className="avatar" />

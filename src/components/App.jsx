@@ -1,7 +1,7 @@
-import { profile } from './Profile/Profile';
+import { Profile } from './Profile/Profile';
 
 export const App = () => {
-  return profile;
+  return Profile;
   // <div
   //   style={{
   //     height: '100vh',
