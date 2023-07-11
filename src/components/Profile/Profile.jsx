@@ -1,32 +1,55 @@
 import user from '../../../src/user.json';
 import PropTypes from 'prop-types';
-import css from './Profile.module.css';
+import {
+  ProfileCard,
+  Description,
+  Avatar,
+  Username,
+  Tag,
+  Location,
+  Stats,
+  StatsItem,
+  Label,
+  Quantity,
+} from './Profile.styled';
+// import css from './Profile.module.css';
 
-export const Profile = (
-  <div className={css.profile}>
-    <div className={css.description}>
-      <img src={user.avatar} alt={user.username} className={css.avatar} />
-      <p className={css.name}>{user.username}</p>
-      <p className={css.tag}>@{user.tag}</p>
-      <p className={css.location}>{user.location}</p>
-    </div>
+export const Profile = () => {
+  const { avatar, username, tag, location, stats } = user;
+  return (
+    <ProfileCard>
+      <Description>
+        <Avatar src={avatar} alt={username} />
+        <Username>{username}</Username>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </Description>
 
-    <ul className={css.stats}>
-      <li>
-        <span className={css.label}>Followers</span>
-        <span className={css.quantity}>{user.stats.followers}</span>
-      </li>
-      <li>
-        <span className={css.label}>Views</span>
-        <span className={css.quantity}>{user.stats.views}</span>
-      </li>
-      <li>
-        <span className={css.label}>Likes</span>
-        <span className={css.quantity}>{user.stats.likes}</span>
-      </li>
-    </ul>
-  </div>
-);
+      <Stats>
+        <StatsItem>
+          <Label>Followers</Label>
+          <Quantity>{stats.followers}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label>Views</Label>
+          <Quantity>{stats.views}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label>Likes</Label>
+          <Quantity>{stats.likes}</Quantity>
+        </StatsItem>
+      </Stats>
+    </ProfileCard>
+  );
+};
+
+Profile.propTypes = {
+  username: PropTypes.string,
+  avatar: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.number),
+};
 
 /* <Profile
   username={user.username}
