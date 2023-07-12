@@ -1,4 +1,3 @@
-import user from '../../../src/user.json';
 import PropTypes from 'prop-types';
 import {
   ProfileCard,
@@ -12,10 +11,8 @@ import {
   Label,
   Quantity,
 } from './Profile.styled';
-// import css from './Profile.module.css';
 
-export const Profile = () => {
-  const { avatar, username, tag, location, stats } = user;
+export const Profile = ({ avatar, username, tag, location, stats }) => {
   return (
     <ProfileCard>
       <Description>
@@ -48,13 +45,5 @@ Profile.propTypes = {
   avatar: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
-  stats: PropTypes.arrayOf(PropTypes.number),
+  stats: PropTypes.objectOf(PropTypes.number),
 };
-
-/* <Profile
-  username={user.username}
-  tag={user.tag}
-  location={user.location}
-  avatar={user.avatar}
-  stats={user.stats}
-/>; */
