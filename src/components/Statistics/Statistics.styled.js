@@ -5,8 +5,7 @@ export const Statistics = styled.section`
   border: 1px solid #e7e9fc;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
   border-radius: 8px;
-  margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 40px;
