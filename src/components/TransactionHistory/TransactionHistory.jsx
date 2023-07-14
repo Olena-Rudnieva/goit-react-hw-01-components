@@ -1,4 +1,4 @@
-import { TransactionItem } from './TransactionItem';
+import { TransactionItem } from '../TransitionItem/TransactionItem';
 import { Table, HeadItem } from './TransactionHistory.styled';
 import PropTypes from 'prop-types';
 
@@ -30,5 +30,5 @@ export const TransactionHistory = ({ items }) => {
 };
 
 TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

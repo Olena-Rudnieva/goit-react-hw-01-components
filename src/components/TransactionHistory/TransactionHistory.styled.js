@@ -20,9 +20,3 @@ export const HeadItem = styled.th`
   padding-bottom: 20px;
   background-color: #e7e9fc;
 `;
-
-export const Item = styled.td`
-  border: 3px solid #e7e9fc;
-  padding-top: 10px;
-  padding-bottom: 10px;
-`;
